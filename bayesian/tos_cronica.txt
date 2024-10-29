@@ -1,0 +1,2 @@
+Enfermedad_Pulmonar=Presente
+Exp_Contaminantes=Alta

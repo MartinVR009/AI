@@ -1,0 +1,102 @@
+{
+    "NODOS": ["creative", "smart", "party", "project", "mac", "hw", "success", "happy"],
+    "ARISTAS": [
+        "creative->project",
+        "smart->project",
+        "creative->mac",
+        "smart->mac",
+        "party->hw",
+        "smart->hw",
+        "project->success",
+        "hw->success",
+        "success->happy",
+        "mac->happy",
+        "party->happy"
+    ],
+    "ESTADOS": {
+        "creative": ["yes_creative", "not_creative"],
+        "smart": ["yes_smart", "not_smart"],
+        "party": ["yes_party", "not_party"],
+        "project": ["yes_project", "not_project"],
+        "mac": ["yes_mac", "not_mac"],
+        "hw": ["yes_hw", "not_hw"],
+        "success": ["yes_success", "not_success"],
+        "happy": ["yes_happy", "not_happy"]
+    },
+    "PROBABILIDADES": {
+        "creative": {
+            "yes_creative": 0.69932,
+            "not_creative": 0.30068
+        },
+        "smart": {
+            "yes_smart": 0.70472,
+            "not_smart": 0.69932
+        },
+        "party": {
+            "yes_party": 0.60216,
+            "not_party": 0.39784
+        },
+        "project": {
+            "yes_creative": {
+                "yes_smart": {"yes_project": 0.90484, "not_project": 0.09516},
+                "not_smart": {"yes_project": 0.40307, "not_project": 0.59693}
+            },
+            "not_creative": {
+                "yes_smart": {"yes_project": 0.79326, "not_project": 0.20674},
+                "not_smart": {"yes_project": 0.10731, "not_project": 0.89269}
+            }
+        },
+        "mac": {
+            "yes_creative": {
+                "yes_smart": {"yes_mac": 0.68564, "not_mac": 0.31436},
+                "not_smart": {"yes_mac": 0.89635, "not_mac": 0.10365}
+            },
+            "not_creative": {
+                "yes_smart": {"yes_mac": 0.41347, "not_mac": 0.58653},
+                "not_smart": {"yes_mac": 0.12329, "not_mac": 0.87671}
+            }
+        },
+        "hw": {
+            "yes_party": {
+                "yes_smart": {"yes_hw": 0.80252, "not_hw": 0.19748},
+                "not_smart": {"yes_hw": 0.09447, "not_hw": 0.90553}
+            },
+            "not_party": {
+                "yes_smart": {"yes_hw": 0.89790, "not_hw": 0.1021},
+                "not_smart": {"yes_hw": 0.30556, "not_hw": 0.69444}
+            }
+        },
+        "success": {
+            "yes_project": {
+                "yes_hw": {"yes_success": 0.89633, "not_success": 0.10367},
+                "not_hw": {"yes_success": 0.20737, "not_success": 0.79263}
+            },
+            "not_project": {
+                "yes_hw": {"yes_success": 0.30714, "not_success": 0.69286},
+                "not_hw": {"yes_success": 0.05066, "not_success": 0.94934}
+            }
+        },
+        "happy": {
+            "yes_success": {
+                "yes_mac": {
+                    "yes_party": {"yes_happy": 0.95842, "not_happy": 0.04158},
+                    "not_party": {"yes_happy": 0.35837, "not_happy": 0.64163}
+                },
+                "not_mac": {
+                    "yes_party": {"yes_happy": 0.72082, "not_happy": 0.27918},
+                    "not_party": {"yes_happy": 0.30769, "not_happy": 0.69231}
+                }
+            },
+            "not_success": {
+                "yes_mac": {
+                    "yes_party": {"yes_happy": 0.49234, "not_happy": 0.50766},
+                    "not_party": {"yes_happy": 0.20619, "not_happy": 0.79381}
+                },
+                "not_mac": {
+                    "yes_party": {"yes_happy": 0.42043, "not_happy": 0.57957},
+                    "not_party": {"yes_happy": 0.09646, "not_happy": 0.90354}
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,3 @@
+party=yes_party
+smart=yes_smart
+creative=not_creative

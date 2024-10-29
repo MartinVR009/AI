@@ -1,0 +1,3 @@
+party=not_party
+hw=yes_hw
+project=yes_proyect

@@ -1,0 +1,23 @@
+{
+  "NODOS": ["Cielo", "Temperatura", "Humedad", "Viento", "SeJugo"],
+  "ARISTAS": ["Cielo->SeJugo", "Temperatura->SeJugo", "Humedad->SeJugo", "Viento->SeJugo"],
+  "PROBABILIDADES": {
+    "Cielo": {
+      "Si": {"Lluvia": 0.222, "Nublado": 0.444, "Soleado": 0.333},
+      "No": {"Lluvia": 0.6, "Nubl ado": 0.0, "Soleado": 0.4}
+    },
+    "Temperatura": {
+      "Si": {"Calor": 0.222, "Templado": 0.444, "Frio": 0.333},
+      "No": {"Calor": 0.4, "Templado": 0.4, "Frio": 0.2}
+    },
+    "Humedad": {
+      "Si": {"Alta": 0.333, "Normal": 0.667},
+      "No": {"Alta": 0.8, "Normal": 0.2}
+    },
+    "Viento": {
+      "Si": {"No": 0.667, "Si": 0.333},
+      "No": {"No": 0.4, "Si": 0.6}
+    },
+    "SeJugo": {"true": 0.643, "false": 0.357}
+  }
+}

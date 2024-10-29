@@ -1,0 +1,62 @@
+{
+    "NODOS": ["Fumador", "Exp_contaminantes", "Edad", "Enfermedad_pulmonar", "Tos_cronica", "Radiografia_anormal"],
+    "ARISTAS": [
+        "Fumador->Enfermedad_pulmonar",
+        "Exp_contaminantes->Enfermedad_pulmonar",
+        "Edad->Enfermedad_pulmonar",
+        "Enfermedad_pulmonar->Tos_cronica",
+        "Enfermedad_pulmonar->Radiografia_anormal"
+    ],
+    "ESTADOS": {
+        "Fumador": ["Si_Fumador", "No_Fumador"],
+        "Exp_contaminantes": ["Alta", "Baja"],
+        "Edad": ["Joven", "Mayor"],
+        "Enfermedad_pulmonar": ["Presente", "Ausente"],
+        "Tos_cronica": ["Si_Tos_Cronica", "No_Tos_Cronica"],
+        "Radiografia_anormal": ["Si_Radiografia", "No_Radiografia"]
+    },
+    "PROBABILIDADES": {
+        "Fumador": {
+            "Si_Fumador": 0.3,
+            "No_Fumador": 0.7
+        },
+        "Exp_contaminantes": {
+            "Alta": 0.2,
+            "Baja": 0.8
+        },
+        "Edad": {
+            "Joven": 0.5,
+            "Mayor": 0.5
+        },
+        "Enfermedad_pulmonar": {
+            "Si_Fumador": {
+                "Alta": {
+                    "Joven": {"Presente": 0.7, "Ausente": 0.3},
+                    "Mayor": {"Presente": 0.8, "Ausente": 0.2}
+                },
+                "Baja": {
+                    "Joven": {"Presente": 0.5, "Ausente": 0.5},
+                    "Mayor": {"Presente": 0.6, "Ausente": 0.4}
+                }
+            },
+            "No_Fumador": {
+                "Alta": {
+                    "Joven": {"Presente": 0.3, "Ausente": 0.7},
+                    "Mayor": {"Presente": 0.4, "Ausente": 0.6}
+                },
+                "Baja": {
+                    "Joven": {"Presente": 0.1, "Ausente": 0.9},
+                    "Mayor": {"Presente": 0.2, "Ausente": 0.8}
+                }
+            }
+        },
+        "Tos_cronica": {
+            "Presente": {"Si_Tos_Cronica": 0.9, "No_Tos_Cronica": 0.1},
+            "Ausente": {"Si_Tos_Cronica": 0.15, "No_Tos_Cronica": 0.85}
+        },
+        "Radiografia_anormal": {
+            "Presente": {"Si_Radiografia": 0.95, "No_Radiografia": 0.05},
+            "Ausente": {"Si_Radiografia": 0.1, "No_Radiografia": 0.9}
+        }
+    }
+}

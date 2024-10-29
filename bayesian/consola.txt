@@ -1,0 +1,4 @@
+Nodos: {'Rain': True, 'Maintenance': True, 'Train': True, 'Appointment': True}
+Aristas : defaultdict(<class 'list'>, {'Rain': ['Maintenance', 'Train'], 'Maintenance': ['Train'], 'Train': ['Appointment']})
+Probabilidades : {'Rain': {'None': '0.7', 'Light': '0.2', 'Heavy': '0.1'}, 'Maintenance': {'None': {'Yes': 0.4, 'No': 0.6}, 'Light': {'Yes': 0.2, 'No': 0.8}, 'Heavy': {'Yes': 0.1, 'No': 0.9}}, 'Train': {'None': {'Yes': {'On_time': 0.8, 'Delayed': 0.2}, 'No': {'On_time': 0.9, 'Delayed': 0.1}}, 'Light': {'Yes': {'On_time': 0.6, 'Delayed': 0.4}, 'No': {'On_time': 0.7, 'Delayed': 0.3}}, 'Heavy': {'Yes': {'On_time': 0.4, 'Delayed': 0.6}, 'No': {'On_time': 0.5, 'Delayed': 0.5}}}, 'Appointment': {'On_time': {'attend': 0.9, 'miss': 0.1}, 'Delayed': {'attend': 0.6, 'miss': 0.4}}}
+Evidencia: {'Rain': 'None', 'Maintenance': 'Yes', 'Train': 'Delayed'}
